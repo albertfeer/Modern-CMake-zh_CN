@@ -89,13 +89,13 @@ add_library(one STATIC two.cpp three.h)
 
 ## 目标时常伴随着你
 
-现在我们已经指定了一个目标，那我们如何添加关于它的信息呢？例如，它可能需要包含一个目录：
+现在我们已经指定了一个目标，那我们如何添加关于它的信息呢？例如，它可能需要包含一个引用目录：
 
 ```cmake
 target_include_directories(one PUBLIC include)
 ```
 
-«command:`target_include_directories`»  为目标添加了一个目录。 `PUBLIC` 对于一个可执行文件目标没有什么含义；但对于库来说，它让 CMake 知道，任何链接到这个目标的目标也必须包含这个目录。其他选项还有 `PRIVATE`（只影响当前目标，不影响依赖），以及 `INTERFACE`（只影响依赖）。
+«command:`target_include_directories`»  为目标添加了一个引用目录。 `PUBLIC` 对于一个可执行文件目标没有什么含义；但对于库来说，它让 CMake 知道，任何链接到这个目标的目标也必须包含这个目录。其他选项还有 `PRIVATE`（只影响当前目标，不影响依赖），以及 `INTERFACE`（只影响依赖）。
 
 接下来我们可以将目标之间链接起来：
 
